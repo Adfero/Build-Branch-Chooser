@@ -1,7 +1,7 @@
 {
   "name": "nextbranch",
   "version": "1.0.0",
-  "description": "",
+  "description": "This script returns the name of a build branch based on a build schedule and build server.",
   "main": "index.js",
   "scripts": {
     "test": "mocha test"
