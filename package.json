@@ -1,0 +1,19 @@
+{
+  "name": "nextbranch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adfero/nextbranch.git"
+  },
+  "author": "John Jones <jjones@adfero.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adfero/nextbranch/issues"
+  },
+  "homepage": "https://github.com/Adfero/nextbranch"
+}
