@@ -1,0 +1,21 @@
+{
+  "schedule": [
+   {
+      "date": "2015-09-01",
+      "branch": "september_release"
+    },
+    {
+      "date": "2015-10-01",
+      "branch": "october_release"
+    },
+    {
+      "date": "2015-11-01",
+      "branch": "november_release"
+    },
+    {
+      "date": "2015-12-01",
+      "branch": "december_release"
+    }
+  ],
+  "server_number": 0
+}
