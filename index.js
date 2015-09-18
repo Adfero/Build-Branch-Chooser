@@ -41,7 +41,8 @@ function nextBranch(config) {
   var now = (new Date()).getTime();
   for(var i=0; i<config.schedule.length; i++) {
     if (config.schedule[i].stamp > now) {
-      return config.schedule[i].branch;
+      var index = Math.min(config.schedule.length - 1, i + config.server_number);
+      return config.schedule[index].branch;
     }
   }
   return 'master';
