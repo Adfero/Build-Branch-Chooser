@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 var fs = require('fs');
+var nextbranch = require('./nextbranch');
 
 if (process.argv.length != 3) {
   usage();
@@ -11,7 +12,7 @@ if (process.argv.length != 3) {
     } else {
       try {
         var json = JSON.parse(data);
-        console.log(nextBranch(json));
+        console.log(nextbranch.nextBranch(json,new Date()));
       } catch (e) {
         console.error(e);
         justPrintMaster();
@@ -28,22 +29,3 @@ function justPrintMaster() {
   console.log('master');
 }
 
-function nextBranch(config) {
-  config.schedule.sort(function(a,b) {
-    if (!a.dateObj) {
-      a.stamp = Date.parse(a.date);
-    }
-    if (!b.dateObj) {
-      b.stamp = Date.parse(b.date);
-    }
-    return a.stamp - b.stamp;
-  });
-  var now = (new Date()).getTime();
-  for(var i=0; i<config.schedule.length; i++) {
-    if (config.schedule[i].stamp > now) {
-      var index = Math.min(config.schedule.length - 1, i + config.server_number);
-      return config.schedule[index].branch;
-    }
-  }
-  return 'master';
-}
